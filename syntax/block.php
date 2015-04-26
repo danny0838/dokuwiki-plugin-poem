@@ -27,7 +27,7 @@ class syntax_plugin_poem_block extends DokuWiki_Syntax_Plugin {
     /**
      * Handle the match
      */
-    function handle($match, $state, $pos, &$handler){
+    function handle($match, $state, $pos, Doku_Handler $handler){
         if ($state==DOKU_LEXER_UNMATCHED) {
             $handler->_addCall('cdata', array($match), $pos);
         }
@@ -37,5 +37,5 @@ class syntax_plugin_poem_block extends DokuWiki_Syntax_Plugin {
     /**
      * Create output
      */
-    function render($format, &$renderer, $data) {}
+    function render($format,  Doku_Renderer $renderer, $data) {}
 }
