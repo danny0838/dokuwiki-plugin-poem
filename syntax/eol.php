@@ -22,12 +22,12 @@ class syntax_plugin_poem_eol extends DokuWiki_Syntax_Plugin {
     /**
      * Handle the match
      */
-    function handle($match, $state, $pos, &$handler){return true;}
+    function handle($match, $state, $pos, Doku_Handler $handler){return true;}
 
     /**
      * Create output
      */
-    function render($format, &$renderer, $data) {
+    function render($format, Doku_Renderer $renderer, $data) {
         if($format == 'xhtml'){
             $renderer->doc .= "<br/>\n";
             return true;
